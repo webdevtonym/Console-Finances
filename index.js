@@ -85,33 +85,55 @@ var finances = [
   ["Dec-2016", 60988],
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
+  
 ];
 
 // PSUEDO CODE //
 
-// Calculate the total number of months
+// Calculates the total number of months
 var totalMonths = 0;
-for (var i = 0; i < finances.length; i++) {
-  if (finances[i] === "true") totalMonths++;
-}
+var total = 0;
+    for (var i = 0; i < finances.length; i+1) {
+    totalMonths++;
+    total = total + finances[i][1] //Shows total of all income added together
 
-console.log(totalMonths);
 
-//if month is equal to the letters 'Jan'
-//then add 1 unit to a variable
+    }
+    console.log(`The total number of months is: ${totalMonths}
+    The net total is: ${total}     `); //Total is 86
+
+// -------------------------------------------------------------
+
+//Finds how many iterations of a particular month appears in the array
+var month = finances.length[month];
+    //if month is equal to the letters 'Jan'
+    
+
+        for (var i=0; i < finances.length; i++) {
+            if (finances[i].includes("Jan", "Feb", "Mar", "Apr", "May")) {
+                month++;
+    }
+    }
+    
+  console.log(month);
+        // console.log(`The amount of months in January are: ${month}`)
+        //then add 1 unit to a variable
 
 //Calculate the net total amount of profit/losses over the entire period
 
+
 //if number is a postive number add it to a variable
 //else if its not positive add it another variable
-
+// ----------------
 //Take the negative number and subtract it from the postive number and that will be the total amount of profit/losses over entire period
-
 // calculate the average of the changes in profit/losses over the entire period
-
+//to go in existing for loop/d
+//-----------------------
 // track total change in profit from month to month
 //then find the average
 // divide the total by the number of months
+//need a for loop
+//-------------------
 
 //The greatest increase in profits (the date and the amount) over the entire period
 //Find the biggest number in the array and display it to the user.
@@ -119,10 +141,12 @@ console.log(totalMonths);
 //The greatest decrease in losses (the date and the amount) over the entire period
 //Find the smallest number in the array and display it to the user.
 
-// var totalMonths = finances.lenth();
-
-// var totalMonths = 0;
-
-// if (totalMonths === 'Jan')
-
-// console.log(totalMonths);
+//----------------------------------
+//OUTPUT//
+// Financial Analysis
+// ----------------------------
+// Total Months: 25
+// Total: $2561231
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
