@@ -93,33 +93,72 @@ var finances = [
 // Calculates the total number of months
 var totalMonths = 0;
 var total = 0;
-    for (var i = 0; i < finances.length; i+1) {
+var average = 0;
+var maxProfit = []
+var minProfit = []
+
+    for (var i = 0; i < finances.length; i++) {
     totalMonths++;
-    total = total + finances[i][1] //Shows total of all income added together
-
-
+    var currentDate = finances[i][0];
+    var currentValue = finances[i][1];
+    total += currentValue;
+    average = total/totalMonths;
+    if (maxProfit.length === 0) {
+      maxProfit.push(currentDate, currentValue);
+      minProfit.push(currentDate, currentValue);
+    } 
+    else {
+      var maxProfitValue = maxProfit[1];
+      if (maxProfitValue < currentValue) {
+        maxProfit = [currentDate, currentValue]
+      }
     }
-    console.log(`The total number of months is: ${totalMonths}
-    The net total is: ${total}     `); //Total is 86
+
+    
+    
+      //Shows total net profit of all numbers added together
+    }
+    console.log(`Total months is: ${totalMonths}\n
+    The net total is: ${total}\n
+    Average Change: ${average}
+    Greatest increase in profits: ${maxProfit}     `); //Total is 86
 
 // -------------------------------------------------------------
 
-//Finds how many iterations of a particular month appears in the array
-var month = finances.length[month];
-    //if month is equal to the letters 'Jan'
-    
+//Show the average of the changes in profit and losses over the entire period.
 
-        for (var i=0; i < finances.length; i++) {
-            if (finances[i].includes("Jan", "Feb", "Mar", "Apr", "May")) {
-                month++;
-    }
-    }
-    
-  console.log(month);
-        // console.log(`The amount of months in January are: ${month}`)
-        //then add 1 unit to a variable
+    //total divided by Number of months 
+      //
 
-//Calculate the net total amount of profit/losses over the entire period
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OUTPUT//
+// Financial Analysis
+// ----------------------------
+// Total Months: 25
+// Total: $2561231
+// Average  Change: $-2315.12
+// Greatest Increase in Profits: Feb-2012 ($1926159)
+// Greatest Decrease in Profits: Sep-2013 ($-2196167)
+
+
+
+
 
 
 //if number is a postive number add it to a variable
@@ -142,11 +181,3 @@ var month = finances.length[month];
 //Find the smallest number in the array and display it to the user.
 
 //----------------------------------
-//OUTPUT//
-// Financial Analysis
-// ----------------------------
-// Total Months: 25
-// Total: $2561231
-// Average  Change: $-2315.12
-// Greatest Increase in Profits: Feb-2012 ($1926159)
-// Greatest Decrease in Profits: Sep-2013 ($-2196167)
