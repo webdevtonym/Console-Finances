@@ -85,7 +85,6 @@ var finances = [
   ["Dec-2016", 60988],
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
-  
 ];
 
 // PSUEDO CODE //
@@ -94,58 +93,43 @@ var finances = [
 var totalMonths = 0;
 var total = 0;
 var average = 0;
-var maxProfit = []
-var minProfit = []
+var maxProfit = [];
+var minProfit = [];
 
-    for (var i = 0; i < finances.length; i++) {
-    totalMonths++;
-    var currentDate = finances[i][0];
-    var currentValue = finances[i][1];
-    total += currentValue;
-    average = total/totalMonths;
-    if (maxProfit.length === 0) {
-      maxProfit.push(currentDate, currentValue);
-      minProfit.push(currentDate, currentValue);
-    } 
-    else {
-      var maxProfitValue = maxProfit[1];
-      if (maxProfitValue < currentValue) {
-        maxProfit = [currentDate, currentValue]
-      }
-    }
+for (var i = 0; i < finances.length; i++) {
+  totalMonths++;
+  var currentDate = finances[i][0];
+  var currentValue = finances[i][1];
+  total += currentValue;
+  average = total / totalMonths;
 
-    
-    
-      //Shows total net profit of all numbers added together
+  if (maxProfit.length === 0) {
+    maxProfit.push(currentDate, currentValue);
+    minProfit.push(currentDate, currentValue);
+  } else {
+    var maxProfitValue = maxProfit[1];
+    if (maxProfitValue < currentValue) {
+      maxProfit = [currentDate, currentValue];
     }
-    console.log(`Total months is: ${totalMonths}\n
+  }
+
+  //Shows total net profit of all numbers added together
+}
+console.log(`Total months is: ${totalMonths}\n
     The net total is: ${total}\n
-    Average Change: ${average}
-    Greatest increase in profits: ${maxProfit}     `); //Total is 86
+    Average Change: ${average}\n
+    Greatest increase in profits: ${maxProfit}
+    Greatest decrease in profits ${minProfitgit a}
+
+    
+    `); //Total is 86
 
 // -------------------------------------------------------------
 
 //Show the average of the changes in profit and losses over the entire period.
 
-    //total divided by Number of months 
-      //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//total divided by Number of months
+//
 
 //OUTPUT//
 // Financial Analysis
@@ -155,11 +139,6 @@ var minProfit = []
 // Average  Change: $-2315.12
 // Greatest Increase in Profits: Feb-2012 ($1926159)
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
-
-
-
-
-
 
 //if number is a postive number add it to a variable
 //else if its not positive add it another variable
