@@ -103,26 +103,43 @@ for (var i = 0; i < finances.length; i++) {
   total += currentValue;
   average = total / totalMonths;
 
-  if (maxProfit.length === 0) {
-    maxProfit.push(currentDate, currentValue);
-    minProfit.push(currentDate, currentValue);
-  } else {
-    var maxProfitValue = maxProfit[1];
-    if (maxProfitValue < currentValue) {
-      maxProfit = [currentDate, currentValue];
-    }
-  }
 
-  //Shows total net profit of all numbers added together
+
+  // if (maxProfit.length === 0) {
+  //   maxProfit.push(currentDate, currentValue);
+  //   minProfit.push(currentDate, currentValue);
+  // } else {
+  //   var maxProfitValue = maxProfit[1];
+  //   if (maxProfitValue < currentValue) {
+  //     maxProfit = [currentDate, currentValue];
+  //   } 
+  // }
+
+  
 }
+
+var maxValue = finances[0][1];
+var minValue = finances[0][1];
+var maxDate = finances[0][0];
+var minDate = finances[0][0];
+
+for (var i = 1; i < finances.length; i++) {
+  var currentValue = finances[i][1];
+  var currentDate = finances[i][0];
+  if (currentDate > maxValue) {
+    maxValue = currentValue;
+    maxDate = currentDate;
+  }
+}
+
 console.log(`Total months is: ${totalMonths}\n
     The net total is: ${total}\n
     Average Change: ${average}\n
     Greatest increase in profits: ${maxProfit}
-    Greatest decrease in profits ${minProfitgit a}
-
-    
-    `); //Total is 86
+    Greatest decrease in profits ${minProfit}
+    `); 
+console.log(`Max Value: ${maxDate,maxValue}`);
+console.log(`Min Value: ${minDate, minValue}`);
 
 // -------------------------------------------------------------
 
