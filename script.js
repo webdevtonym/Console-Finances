@@ -99,24 +99,13 @@ var minProfit = [];
 for (var i = 0; i < finances.length; i++) {
   totalMonths++;
   var currentDate = finances[i][0];
-  var currentValue = finances[i][1];
+  var currentValue = finances[i][1]; //targets the 2nd index (index 1 - the value) in the inner array to assign those values to the currentValue variable
   total += currentValue;
+  //Show the average of the changes in profit and losses over the entire period.
   average = total / totalMonths;
-
-
-
-  // if (maxProfit.length === 0) {
-  //   maxProfit.push(currentDate, currentValue);
-  //   minProfit.push(currentDate, currentValue);
-  // } else {
-  //   var maxProfitValue = maxProfit[1];
-  //   if (maxProfitValue < currentValue) {
-  //     maxProfit = [currentDate, currentValue];
-  //   } 
-  // }
-
-  
+  average = Math.round(average); // to prevent average from displaying too many numbers after the decimal
 }
+
 
 var maxValue = finances[0][1];
 var minValue = finances[0][1];
@@ -132,23 +121,15 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
-console.log(`Total months is: ${totalMonths}\n
-    The net total is: ${total}\n
-    Average Change: ${average}\n
-    Greatest increase in profits: ${maxProfit}
-    Greatest decrease in profits ${minProfit}
-    `); 
-console.log(`Max Value: ${maxDate,maxValue}`);
-console.log(`Min Value: ${minDate, minValue}`);
+console.log("Financial Analysis\n ------------------");
+console.log(`Total Months: ${totalMonths}`);
+console.log(`Total: ${total}`);
+console.log(`Average Change: ${average}`);
+console.log(`Greatest Increase in Profits: ${maxDate, maxValue}`);
+console.log(`Greatest Decrease in Profits: ${(minDate, minValue)}`);
 
-// -------------------------------------------------------------
 
-//Show the average of the changes in profit and losses over the entire period.
-
-//total divided by Number of months
-//
-
-//OUTPUT//
+//EXPECTED OUTPUT//
 // Financial Analysis
 // ----------------------------
 // Total Months: 25
@@ -156,24 +137,4 @@ console.log(`Min Value: ${minDate, minValue}`);
 // Average  Change: $-2315.12
 // Greatest Increase in Profits: Feb-2012 ($1926159)
 // Greatest Decrease in Profits: Sep-2013 ($-2196167)
-
-//if number is a postive number add it to a variable
-//else if its not positive add it another variable
-// ----------------
-//Take the negative number and subtract it from the postive number and that will be the total amount of profit/losses over entire period
-// calculate the average of the changes in profit/losses over the entire period
-//to go in existing for loop/d
-//-----------------------
-// track total change in profit from month to month
-//then find the average
-// divide the total by the number of months
-//need a for loop
-//-------------------
-
-//The greatest increase in profits (the date and the amount) over the entire period
-//Find the biggest number in the array and display it to the user.
-
-//The greatest decrease in losses (the date and the amount) over the entire period
-//Find the smallest number in the array and display it to the user.
-
 //----------------------------------
