@@ -16,7 +16,7 @@ Including:
 
 ![Console-Finances](/images/finance-output.png)
 
-Link to application: https://github.com/webdevtonym/Console-Finances/blob/main/index.html
+Link to application: https://webdevtonym.github.io/Console-Finances/
 
 ## Licence 
 
