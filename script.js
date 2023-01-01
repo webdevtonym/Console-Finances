@@ -119,12 +119,12 @@ average = average.toFixed(2);
 
 
 //prints the output
-console.log("Financial Analysis\n ------------------");
-console.log(`Total Months: ${totalMonths}`);
-console.log(`Total: ${total}`);
-console.log(`Average Change: ${average}`);
-console.log(`Greatest Increase in Profits: ${maxProfit}`);
-console.log(`Greatest Decrease in Profits: ${minProfit}`);
+console.log("Financial Analysis\n------------------");
+console.log(`Total Months: $${totalMonths}`);
+console.log(`Total: $${total}`);
+console.log(`Average Change: $${average}`);
+console.log(`Greatest Increase in Profits: ${maxProfit[0]} $${maxProfit[1]}`);
+console.log(`Greatest Decrease in Profits: ${minProfit[0]} $${minProfit[1]} `);
 
 
 //EXPECTED OUTPUT//
