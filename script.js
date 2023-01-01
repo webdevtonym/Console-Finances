@@ -89,44 +89,42 @@ var finances = [
 
 // PSUEDO CODE //
 
-// Calculates the total number of months
-var totalMonths = 0;
+// First create all variables needed
 var total = 0;
+var totalMonths = 0;
 var average = 0;
-var maxProfit = [];
-var minProfit = [];
+var maxProfit = [finances[0][0],finances[0][1]];
+var minProfit = [finances[0][0], finances[0][1]];
 
 for (var i = 0; i < finances.length; i++) {
-  totalMonths++;
-  var currentDate = finances[i][0];
-  var currentValue = finances[i][1]; //targets the 2nd index (index 1 - the value) in the inner array to assign those values to the currentValue variable
-  total += currentValue;
-  //Show the average of the changes in profit and losses over the entire period.
-  average = total / totalMonths;
-  average = Math.round(average); // to prevent average from displaying too many numbers after the decimal
-}
+  total += finances[i][1]; // will add the value of inner array to total each time the loops is executed
+  totalMonths++ // will add 1 to this variable everytime loop is executed.
 
-
-var maxValue = finances[0][1];
-var minValue = finances[0][1];
-var maxDate = finances[0][0];
-var minDate = finances[0][0];
-
-for (var i = 1; i < finances.length; i++) {
-  var currentValue = finances[i][1];
-  var currentDate = finances[i][0];
-  if (currentDate > maxValue) {
-    maxValue = currentValue;
-    maxDate = currentDate;
+  // for the greatest increase in profits
+  if (finances[i][1] > maxProfit[1]) {
+    maxProfit = [finances[i][0], finances[i][1]];
   }
+
+  // for the greatest decrease in profits
+    if(finances[i][1] < minProfit[1]) {
+      minProfit = [finances[i][0],finances[i][1]];
+
+    }
+
 }
 
+// to show the average profits in all months and prevent the number having to many numbers after the decimal
+average = total / totalMonths;
+average = average.toFixed(2);
+
+
+//prints the output
 console.log("Financial Analysis\n ------------------");
 console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: ${total}`);
 console.log(`Average Change: ${average}`);
-console.log(`Greatest Increase in Profits: ${maxDate, maxValue}`);
-console.log(`Greatest Decrease in Profits: ${(minDate, minValue)}`);
+console.log(`Greatest Increase in Profits: ${maxProfit}`);
+console.log(`Greatest Decrease in Profits: ${minProfit}`);
 
 
 //EXPECTED OUTPUT//
