@@ -93,12 +93,12 @@ var finances = [
 var total = 0;
 var totalMonths = 0;
 var average = 0;
-var maxProfit = [finances[0][0],finances[0][1]];
+var maxProfit = [finances[0][0], finances[0][1]];
 var minProfit = [finances[0][0], finances[0][1]];
 
 for (var i = 0; i < finances.length; i++) {
   total += finances[i][1]; // will add the value of inner array to total each time the loops is executed
-  totalMonths++ // will add 1 to this variable everytime loop is executed.
+  totalMonths++; // will add 1 to this variable everytime loop is executed.
 
   // for the greatest increase in profits
   if (finances[i][1] > maxProfit[1]) {
@@ -106,17 +106,14 @@ for (var i = 0; i < finances.length; i++) {
   }
 
   // for the greatest decrease in profits
-    if(finances[i][1] < minProfit[1]) {
-      minProfit = [finances[i][0],finances[i][1]];
-
-    }
-
+  if (finances[i][1] < minProfit[1]) {
+    minProfit = [finances[i][0], finances[i][1]];
+  }
 }
 
 // to show the average profits in all months and prevent the number having to many numbers after the decimal
 average = total / totalMonths;
 average = average.toFixed(2);
-
 
 //prints the output
 console.log("Financial Analysis\n------------------");
@@ -125,7 +122,6 @@ console.log(`Total: $${total}`);
 console.log(`Average Change: $${average}`);
 console.log(`Greatest Increase in Profits: ${maxProfit[0]} $${maxProfit[1]}`);
 console.log(`Greatest Decrease in Profits: ${minProfit[0]} $${minProfit[1]} `);
-
 
 //EXPECTED OUTPUT//
 // Financial Analysis
